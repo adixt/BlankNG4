@@ -8,6 +8,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RootRouteMappingConfiguration } from 'app/app.routing';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ProductsModule } from 'app/products/products.module';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,13 @@ import { AboutComponent } from './about/about.component';
     AboutComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
+    HttpModule,
     CollapseModule.forRoot(),
     RouterModule.forRoot(RootRouteMappingConfiguration),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
